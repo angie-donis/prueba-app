@@ -1,0 +1,83 @@
+.form-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #4b0082;
+    border-radius: 8px;
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      gap: 20px;
+  
+      .title {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        h2 {
+          font-size: 24px;
+          color: #4b0082;
+          margin: 0px;
+        }
+        p {
+          font-size: 14px;
+          color: #6b6b6b;
+          margin: 0;
+        }
+      }
+    }
+  
+    .form-row {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+  
+      .form-group {
+        flex: 1;
+  
+        label {
+          display: block;
+          font-size: 14px;
+          margin-bottom: 5px;
+          color: #4b0082;
+        }
+  
+        .form-input {
+          width: 100%;
+          display: block; /* Opcional: asegúrate de que el input sea un bloque */
+          width: 100%; /* Ajusta el ancho según sea necesario */
+          padding: 8px 12px; /* Agrega padding interno para mejor apariencia */
+          border: 1px solid #ccc; /* Borde inicial */
+          border-radius: 4px; /* Bordes redondeados opcionales */
+          box-sizing: border-box; /* Para incluir padding y borde en el tamaño */
+        }
+  
+        .form-input:focus {
+          border: 1px solid #6200ea; /* Color del borde al hacer focus */
+          outline: none; /* Quita el contorno por defecto del navegador */
+        }
+  
+        /* Cambia el color del borde al hacer active (si aplica) */
+        .form-input:active {
+          border: 1px solid #3700b3; /* Color del borde al hacer active */
+        }
+  
+        .error {
+          color: #d32f2f;
+          font-size: 10px;
+        }
+      }
+  
+      .full-width {
+        flex: 1 1 100%;
+      }
+    }
+  
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+  }

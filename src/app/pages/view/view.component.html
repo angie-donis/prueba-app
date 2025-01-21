@@ -1,0 +1,43 @@
+<div class="view-container">
+    <div class="header">
+        <div class="title">
+            <a routerLink="/" class="btn back">
+                <span class="material-icons">chevron_left</span>
+                Regresar
+            </a>
+            <h2>Detalle</h2>
+            <p>Información detallada de la empresa</p>
+        </div>
+        <a class="btn gradient" [routerLink]="['/editar', company?.id]">Editar</a>
+    </div>
+    <section class="view-detail">
+        <div class="section">
+            <p class="title">Nombre comercial</p>
+            <p class="description">{{ company?.name || "-" }}</p>
+        </div>
+        <div class="section">
+            <p class="title">Razón social</p>
+            <p class="description">{{ company?.reason || "-" }}</p>
+        </div>
+        <div class="section">
+            <p class="title">Teléfono</p>
+            <p class="description">{{ company?.phone || "-" }}</p>
+        </div>
+        <div class="section">
+            <p class="title">Correo electrónico</p>
+            <p class="description">{{ company?.email || "-" }}</p>
+        </div>
+        <div class="section">
+            <p class="title">NIT</p>
+            <p class="description">{{ company?.nit || "-" }}</p>
+        </div>
+        <div class="section">
+            <p class="title">Estado</p>
+            <p class="description">{{ company?.status || "-" }}</p>
+        </div>
+        <div class="section">
+            <p class="title">Dirección</p>
+            <p class="description">{{ company?.address || "-" }}</p>
+        </div>
+    </section>
+</div>

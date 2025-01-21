@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'prueba-app';
+  empresas = [
+    { estado: 'Activo', nombre: 'Carlos Esorche', email: 'carlos@email.com', nit: 'admin' },
+    { estado: 'Activo', nombre: 'Emilia Santander', email: 'emilia@email.com', nit: 'admin' },
+    { estado: 'Activo', nombre: 'Camila Alvarez', email: 'camila@email.com', nit: 'admin' },
+    { estado: 'Activo', nombre: 'Laura Mendoza', email: 'laura@email.com', nit: 'admin' },
+    { estado: 'Activo', nombre: 'Felix Salas', email: 'felix@email.com', nit: 'admin' },
+  ];
 }

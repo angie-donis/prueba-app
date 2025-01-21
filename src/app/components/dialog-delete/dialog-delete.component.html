@@ -1,0 +1,11 @@
+<div class="overlay" *ngIf="isOpen">
+    <div class="dialog">
+      <h2>¿Está seguro de que desea eliminar esta empresa <strong>{{company?.reason}}</strong>?</h2>
+      <p>Esta acción no se puede deshacer.</p>
+  
+      <div class="dialog-buttons">
+        <button class="btn cancel" (click)="onCancel()">Cancelar</button>
+        <button class="btn delete" (click)="onConfirm()">Eliminar</button>
+      </div>
+    </div>
+  </div>

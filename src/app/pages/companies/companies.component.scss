@@ -7,11 +7,19 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: linear-gradient(to right, #6a11cb, #325cbf, #0699c9, #91d6e6, #d7f1f7, #f3f5f5);
+      background: linear-gradient(
+        to right,
+        #6a11cb,
+        #325cbf,
+        #0699c9,
+        #91d6e6,
+        #d7f1f7,
+        #f3f5f5
+      );
       color: white;
       padding: 15px;
   
-      .title{
+      .title {
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -26,7 +34,6 @@
         margin: 0;
         font-size: 0.9rem;
       }
-  
     }
   
     .custom-table {
@@ -35,13 +42,12 @@
       margin-top: 20px;
       border-collapse: separate; // Asegura que los bordes no colapsen
       border-spacing: 0 15px; // Espaciado entre filas (horizontal y vertical)
-  
-      th, td {
+      th,
+      td {
         padding: 20px 15px; // Espaciado interno en celdas
         text-align: left; // Alineación del texto
         font-size: 1rem;
       }
-  
   
       th {
         text-align: left;
@@ -58,6 +64,7 @@
       tr {
         color: #6a11cb;
         font-weight: 700;
+        cursor: pointer;
         &:nth-child(even) {
           background-color: #eaf6ff;
         }
@@ -72,15 +79,7 @@
         border: none;
         cursor: pointer;
         font-size: 1.2rem;
-  
-        &.edit {
-          color: #6a11cb;
-        }
-  
-        &.delete {
-          color: #e53935;
-        }
-  
+        color: #6a11cb;
         &:hover {
           transform: scale(1.2);
         }

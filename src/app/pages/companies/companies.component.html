@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="header">
+      <div class="title">
+        <h2>Gestión de empresas</h2>
+        <p>Agrega, edita o elimina número de usuarios.</p>
+      </div>
+      <a class="btn gradient" routerLink="/crear">Agregar</a>
+    </div>
+  
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Estado</th>
+          <th>Nombre</th>
+          <th>E-mail</th>
+          <th>NIT</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let company of companies; let i = index" (click)="onView(company)">
+          <td>{{ i + 1 }}</td>
+          <td>{{ company?.status }}</td>
+          <td>{{ company?.name }}</td>
+          <td>{{ company?.email }}</td>
+          <td>{{ company?.nit }}</td>
+          <td>
+            <button class="btn-icon" (click)="onAction($event, company, 'edit')">
+              <span class="material-icons"> edit </span>
+            </button>
+            <button class="btn-icon" (click)="onAction($event, company, 'delete')">
+              <span class="material-icons"> delete </span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <app-dialog-delete [isOpen]="openDialogDelete" (confirm)="onDelete()" [company]="selectedCompany"/>

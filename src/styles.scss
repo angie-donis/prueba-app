@@ -1,1 +1,96 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+}
+
+*{
+  min-width: 0;
+  font-family: "Lato", Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.btn {
+  &.gradient {
+    background: linear-gradient(
+      to right,
+      #6a11cb,
+      #3459bf,
+      #029cc7
+    ); // Degradado azul-violeta
+  }
+  border: none;
+  border-radius: 50px; // Bordes redondeados
+  padding: 10px 20px; // Espaciado interno
+  color: white; // Color del texto
+  font-size: 1rem; // Tamaño de fuente
+  font-weight: bold; // Negrita para el texto
+  cursor: pointer; // Cambia el cursor al pasar sobre el botón
+  transition: all 0.3s ease; // Suavidad en las transiciones
+  min-height: 48px;
+  min-width: 160px;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    filter: brightness(1.2); // Aumenta el brillo al pasar el cursor
+    transform: scale(1.05); // Efecto de escala leve
+  }
+
+  &:active {
+    transform: scale(0.98); // Efecto de presionado
+  }
+
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); // Sombra sutil
+
+  &.cancel {
+    background-color: #ccc;
+    color: #000;
+  }
+
+  &.delete {
+    background-color: #d32f2f;
+    color: #fff;
+  }
+
+  &.back {
+    background-color: none;
+    color: #fff;
+    box-shadow: none;
+    min-width: fit-content !important;
+    width: fit-content !important;
+  }
+}

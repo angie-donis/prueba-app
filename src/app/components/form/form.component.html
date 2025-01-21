@@ -1,0 +1,151 @@
+<div class="form-container">
+    <div class="header">
+      <div class="title">
+        <h2>{{ isEdit ? "Editar empresa" : "Crear empresa" }}</h2>
+        <p>
+          {{
+            isEdit
+              ? "Utiliza los campos para actualizar los datos"
+              : "Llena los campos para crear una nueva empresa"
+          }}
+        </p>
+      </div>
+  
+      <div class="form-actions">
+        <a class="btn gradient" routerLink="/">Cancelar</a>
+        <button type="submit" class="btn gradient" form="company-form">
+          {{ isEdit ? "Guardar" : "Crear" }}
+        </button>
+      </div>
+    </div>
+  
+    <form id="company-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Nombre Comercial</label>
+          <input
+            id="name"
+            type="text"
+            class="form-input"
+            name="name"
+            formControlName="name"
+            placeholder="Ingrese el Nombre Comercial"
+          />
+          <span
+            *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
+            class="error"
+          >
+            El nombre es requerido
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="reason">Razón Social</label>
+          <input
+            id="reason"
+            type="text"
+            class="form-input"
+            name="reason"
+            formControlName="reason"
+            placeholder="Ingrese la Razón Social"
+          />
+          <span
+            *ngIf="form.get('reason')?.invalid && form.get('reason')?.touched"
+            class="error"
+          >
+            La razón social es requerido
+          </span>
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Teléfono</label>
+          <input
+            id="phone"
+            type="text"
+            class="form-input"
+            name="phone"
+            formControlName="phone"
+            placeholder="Ingrese el Teléfono"
+          />
+          <span
+            *ngIf="form.get('phone')?.invalid && form.get('phone')?.touched"
+            class="error"
+          >
+            El teléfono es requerido
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="email">Correo Electrónico</label>
+          <input
+            id="email"
+            type="email"
+            class="form-input"
+            name="email"
+            formControlName="email"
+            placeholder="Ingrese el Correo Electrónico"
+          />
+          <span
+            *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+            class="error"
+          >
+            El correo electrónico es requerido
+          </span>
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nit">NIT</label>
+          <input
+            id="nit"
+            type="text"
+            class="form-input"
+            name="nit"
+            formControlName="nit"
+            placeholder="Ingrse el Número de Identificación Tributaria"
+          />
+          <span
+            *ngIf="form.get('nit')?.invalid && form.get('nit')?.touched"
+            class="error"
+          >
+            El NIT es requerido
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="status">Estado</label>
+          <select id="status" class="form-input" formControlName="status">
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="Activo">Activo</option>
+            <option value="Inactivo">Inactivo</option>
+          </select>
+          <span
+            *ngIf="form.get('status')?.invalid && form.get('status')?.touched"
+            class="error"
+          >
+            El estado es requerido
+          </span>
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group full-width">
+          <label for="address">Dirección</label>
+          <input
+            id="address"
+            type="text"
+            class="form-input"
+            name="address"
+            formControlName="address"
+            placeholder="Ingrese la Dirección"
+          />
+          <span
+            *ngIf="form.get('address')?.invalid && form.get('address')?.touched"
+            class="error"
+          >
+            La dirección es requerida
+          </span>
+        </div>
+      </div>
+    </form>
+  </div>
