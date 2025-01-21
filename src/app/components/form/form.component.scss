@@ -63,6 +63,13 @@
         .form-input:active {
           border: 1px solid #3700b3; /* Color del borde al hacer active */
         }
+        .form-input:disabled,
+        textarea:disabled,
+        select:disabled {
+          background-color: #f1ebf8fd;
+          cursor: not-allowed;
+          opacity: 1;
+        }s
   
         .error {
           color: #d32f2f;
@@ -79,5 +86,10 @@
       display: flex;
       justify-content: flex-end;
       gap: 10px;
+
+      .loader{
+        width: 30px;
+        height: 30px;
+      }
     }
   }

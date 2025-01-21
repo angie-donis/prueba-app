@@ -13,8 +13,9 @@
   
       <div class="form-actions">
         <a class="btn gradient" routerLink="/">Cancelar</a>
-        <button type="submit" class="btn gradient" form="company-form">
-          {{ isEdit ? "Guardar" : "Crear" }}
+        <button type="submit" class="btn gradient" form="company-form" [disabled]="loading">
+         <span *ngIf="!loading"> {{ isEdit ? "Guardar" : "Crear" }}</span>
+         <img src="assets/icons/loader.svg" *ngIf="loading" class="loader"/>
         </button>
       </div>
     </div>
@@ -103,7 +104,7 @@
             class="form-input"
             name="nit"
             formControlName="nit"
-            placeholder="Ingrse el Número de Identificación Tributaria"
+            placeholder="Ingrese el Número de Identificación Tributaria"
           />
           <span
             *ngIf="form.get('nit')?.invalid && form.get('nit')?.touched"
