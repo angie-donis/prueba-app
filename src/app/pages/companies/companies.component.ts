@@ -30,7 +30,12 @@ export class CompaniesComponent {
     }
   }
 
-  onDelete() {
+  onDelete(confirm: boolean) {
+    if (!confirm) {
+      this.openDialogDelete = false;
+      this.selectedCompany = null;
+      return;
+    }
     this.companiesService.delete(this.selectedCompany?.id!).pipe(catchError(error => {
       toast.Notify.failure('No se pudo eliminar la empresa');
       return error

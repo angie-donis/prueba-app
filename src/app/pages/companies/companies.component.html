@@ -38,4 +38,4 @@
     </table>
   </div>
   
-  <app-dialog-delete [isOpen]="openDialogDelete" (confirm)="onDelete()" [company]="selectedCompany"/>
+  <app-dialog-delete [isOpen]="openDialogDelete" (confirm)="onDelete($event)" [company]="selectedCompany"/>
