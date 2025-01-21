@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CompaniesService } from 'src/app/services/companies/companies.service';
 import { Company } from 'src/app/types';
+import * as toast from 'notiflix';
+import { catchError } from 'rxjs';
 
 @Component({
   selector: 'app-companies',
@@ -10,49 +13,11 @@ import { Company } from 'src/app/types';
 export class CompaniesComponent {
   openDialogDelete = false;
   selectedCompany: Company | null = null;
-  companies: Company[] = [
-    {
-      id: crypto.randomUUID(),
-      status: 'Activo',
-      name: 'Carlos Esorche',
-      email: 'carlos@email.com',
-      nit: 'admin',
-      reason: 'MM Comunicaciones Guatemala S.A',
-    },
-    {
-      id: crypto.randomUUID(),
-      status: 'Activo',
-      name: 'Emilia Santander',
-      email: 'emilia@email.com',
-      nit: 'admin',
-      reason: 'MM Comunicaciones Guatemala S.A',
-    },
-    {
-      id: crypto.randomUUID(),
-      status: 'Activo',
-      name: 'Camila Alvarez',
-      email: 'camila@email.com',
-      nit: 'admin',
-      reason: 'MM Comunicaciones Guatemala S.A',
-    },
-    {
-      id: crypto.randomUUID(),
-      status: 'Activo',
-      name: 'Laura Mendoza',
-      email: 'laura@email.com',
-      nit: 'admin',
-      reason: 'MM Comunicaciones Guatemala S.A',
-    },
-    {
-      id: crypto.randomUUID(),
-      status: 'Activo',
-      name: 'Felix Salas',
-      email: 'felix@email.com',
-      nit: 'admin',
-    },
-  ];
 
-  constructor(private router: Router) { }
+
+  constructor(private router: Router, public companiesService: CompaniesService) {
+    this.fetch();
+  }
 
   onAction(event: Event, company: Company, action: string) {
     event.stopPropagation();
@@ -66,11 +31,24 @@ export class CompaniesComponent {
   }
 
   onDelete() {
-    this.openDialogDelete = false;
-    this.selectedCompany = null;
+    this.companiesService.delete(this.selectedCompany?.id!).pipe(catchError(error => {
+      toast.Notify.failure('No se pudo eliminar la empresa');
+      return error
+    })).subscribe((res: any) => {
+      this.companiesService.setData(this.companiesService.companies.filter((company) => company.id !== this.selectedCompany?.id));
+      this.openDialogDelete = false;
+      this.selectedCompany = null;
+      toast.Notify.success('Empresa eliminada correctamente');
+    })
   }
 
   onView(company: Company) {
     this.router.navigate([`/detalle/${company.id}`]);
+  }
+  fetch() {
+    if (this.companiesService.companies.length > 0) return;
+    this.companiesService.getAll().subscribe((res: any) => {
+      this.companiesService.setData(res);
+    });
   }
 }

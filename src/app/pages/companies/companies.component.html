@@ -19,7 +19,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let company of companies; let i = index" (click)="onView(company)">
+        <tr *ngFor="let company of companiesService.companies; let i = index" (click)="onView(company)">
           <td>{{ i + 1 }}</td>
           <td>{{ company?.status }}</td>
           <td>{{ company?.name }}</td>
