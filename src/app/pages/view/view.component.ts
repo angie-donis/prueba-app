@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CompaniesService } from 'src/app/services/companies/companies.service';
 import { Company } from 'src/app/types';
 
 @Component({
@@ -6,12 +8,14 @@ import { Company } from 'src/app/types';
   templateUrl: './view.component.html',
   styleUrls: ['./view.component.scss'],
 })
-export class ViewComponent {
-  company: Company | null = {
-    id: crypto.randomUUID(),
-    status: 'Activo',
-    name: 'Felix Salas',
-    email: 'felix@email.com',
-    nit: 'admin',
-  };
+export class ViewComponent implements OnInit {
+  company: Company | null = null;
+constructor(private companiesService: CompaniesService, private route: ActivatedRoute) { }
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(({params}: any) => {
+      this.companiesService.getOne(params.id).subscribe((res) => {
+        this.company = res;
+      })
+    });
+  }
 }
