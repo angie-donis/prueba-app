@@ -1,33 +1,50 @@
-# PruebaApp
+# Companies app
+This project was carried out for a test, it was developed using the NodeJS, and it also includes the following:
+1. Angular
+2. NodeJS
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+## Table of contents  📌
 
-## Development server
+- [Branches](#branches-)
+- [Prerequisites](#prerequisites-)
+- [Installation](#installation-)
+- [Available scripts](#available-scripts-)
+- [VS Code extensions](#vs-code-extensions-)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Branches
+|Branch|URL  |
+|--|--|
+| Main | 👇|
+| Development| 👇  |
 
-## Code scaffolding
+## Prerequisites 🌱
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ - [Node v22.13.0](https://nodejs.org/en/) 
+ - [Angular v16.0.0](https://v16.angular.io/guide/setup-local) 
 
-## Build
+##  Installation 🤖
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
 
-## Running unit tests
+> git clone https://github.com/angie-donis/prueba-app
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+> cd prueba-app
 
-## Running end-to-end tests
+> npm install
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+> ng serve
 
-## Further help
+```
+  
+##  Available scripts 🐍
+|Script|Description  |
+|--|--|
+| ng serve | Run project in port 4200 |
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# prueba-app
-# prueba-app
-# prueba-app
-# prueba-app
-# prueba-app
-# prueba-app
+
+##  VS Code extensions 🧩
+
+> A must have collection of VS Code extensions for a better development experience and a healthy codebase.
+
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
