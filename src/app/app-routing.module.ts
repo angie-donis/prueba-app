@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: 'crear',
-    loadChildren: () =>
-      import('./pages/create/create.module').then((m) => m.CreateModule),
-  },
+  // {
+  //   path: 'crear',
+  //   loadChildren: () =>
+  //     import('./pages/create/create.module').then((m) => m.CreateModule),
+  // },
   {
     path: 'editar/:id',
     loadChildren: () =>
