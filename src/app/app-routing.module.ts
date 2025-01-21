@@ -15,7 +15,7 @@ const routes: Routes = [
   {
     path: 'detalle/:id',
     loadChildren: () =>
-      import('./pages/view/view.module').then((m) => m.),
+      import('./pages/view/view.module').then((m) => m.ViewModule),
   },
   {
     path: '',
